@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<head>
+<title>Guess a Number </title>
+</head>
+<body>
+    <h1>Guess a number between 1 to 100</h1>
+    <input type="number" id="num">
+    <button type="button" onclick="randomnumber()">check</button>
+</body>
+<script>
+function randomnumber()
+{
+    // our guessed number
+    const number = document.getElementById('num').value
+
+  // counter variable is used to count the number of attempts it takes a user to guess the number
+     const counter=1
+
+ // generate random number
+     const min=1;
+     const max=100;
+     const rand=Math.floor((Math.random()*(max-min+1))+min)
+  
+    if(number<1 && number>100)
+        {
+            alert("please enter a number between 1 to 100, so we can guess it")
+        }
+        elseif(number>rand)
+        {
+            counter++
+            alert("sorry! you have to enter a number less than "+number)
+          
+        }
+        elseif(number<rand)
+        {
+            counter++
+          alert("sorry! you have to enter a number greater than than "+number)
+         
+        }
+        elseif(number==rand)
+        {
+           alert("Congratuations!! you guessed it in "+counter+" attempt")
+        }
+     
+
+}
+</script>
+</html>
