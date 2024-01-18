@@ -57,3 +57,8 @@ if(2==="2")
 else{
    console.log(" not matched");
 }
+
+//ternary operator
+// syntax: condition?true statement:false statement
+let agenumber=20
+agenumber>=18?console.log("You are eligible for vote"):console.log("you are not eligible for vote")

@@ -32,3 +32,20 @@ else
 {
     console.log("not empty object");
 }
+
+//The nullish coalescing ( ?? ) operator :
+//is a logical operator that returns its right-hand side operand when its left-hand side operand is null or undefined , and otherwise returns its left-hand side operand
+let value1
+let value2
+// value1=5 ?? 10
+// console.log(value1) // when both are values then left hand side value is assigned
+
+// incase of null or undefined:
+//when there is null or undefined on the left side then the right hand side value is asssigned to the variable
+// simply if there is null or undefined value than the other value is assigned in that case
+
+value1=null ?? 15
+console.log(value1)// 15 is assigned 
+
+value2= 30?? undefined 
+console.log(value2)// 30 is assigned to the value 2
