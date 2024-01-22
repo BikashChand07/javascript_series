@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="fruits">
+        <li>Apple</li>
+    </ul>
+</body>
+<script>
+    // creating an element and adding it to the  ul using function
+    
+    function addfruits(fruitname)
+    {
+        const list = document.createElement('li')
+        list .appendChild(document.createTextNode(fruitname))
+        document.querySelector('.fruits').appendChild(list)
+    }
+    addfruits('Mango')
+    addfruits('Banana')
+    addfruits('orange')
+    addfruits('dragonfruit')
+ 
+    //Edit
+    const secondfruit = document.querySelector("li:nth-child(2)")
+    // console.log(secondfruit)
+  const newli = document.createElement('li')
+  newli.appendChild(document.createTextNode("papaya"))
+  secondfruit.replaceWith(newli)
+
+  //remove last li element
+  const lastfruit=document.querySelector("li:last-child")
+//   console.log(lastfruit)
+  lastfruit.remove()
+
+  
+  const secondlastfruit= document.querySelector("li:nth-child(3)")
+  console.log(secondlastfruit)
+  secondlastfruit.remove()
+  
+
+
+</script>
+</html>

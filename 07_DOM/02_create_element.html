@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //creating div element and append it to the body
+    const div = document.createElement('div')
+    // console.log(div)
+
+    //setting classname  and id to the div
+      div.className="new_div"
+     div.id="3"
+    
+    div.setAttribute("title" ," new created div")
+    //title is the name of attribute and "new created div " is the value of that attribute
+     // div.setAttribute("id","4")
+
+     div.style.backgroundColor='yellow'
+
+     //till now we create an element
+
+     //now create a text node which contains the content of element
+
+     const text = document.createTextNode("hello, this is newly created div element")
+
+     //append this textnode to the div
+     div.appendChild(text)//now div conatins its content
+
+     //finally attach this div to the body(parent)
+     document.body.appendChild(div)
+
+
+     
+
+</script>
+</html>

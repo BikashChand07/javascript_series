@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM(creating element)</title>
+</head>
+<body>
+    <div class="parent">
+        <div class="month">January</div>
+        <div class="month">Febraury</div>
+        <div class="month">March</div>
+        <div class="month">April</div>
+    </div>
+        <script>
+            //acseeing parents children
+
+             const parent = document.querySelector('.parent')// this is the parent element
+             console.log(parent)
+             console.log(parent.children)// it gives the html collection of all children of parent
+             
+             // accessing children
+             console.log(parent.children[1])// return first element  ie <div class="month">Febraury</div>
+             
+             console.log(parent.children[1].innerHTML)// output= febraury
+
+             //since parent.children returns the html collection of its children and html collection is different from array but we can apply normal loop to the html collection and cannt apply map,filter other methods which are for the arrays
+             
+             for (let i = 0; i < parent.children.length; i++) {           
+                console.log(parent.children[i])   
+                /*it will return : all the childrens of parent ie
+                <div class ="month"> January </div>
+                <div class ="month">Febraury </div>
+                <div class ="month"> March </div>
+                <div class ="month"> April </div>
+                */
+             }
+
+             // style
+             parent.children[1].style.color="blue"
+
+             // moving child to parent
+               const dayone=document.querySelector('.month')// it will give the first element having class month
+               console.log(dayone.parentElement)// returns the parent of element dayone
+
+               console.log(dayone.nextElementSibling)// gives next element of dayone
+
+               //important
+               //    console.log("NODES: ", parent.childNodes)
+            </script>
+</body>
+</html>
