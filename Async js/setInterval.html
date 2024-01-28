@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading">Async Js</h1>
+    <button id="start">start to display time</button>
+    <button id="stop">click here to stop time </button>
+</body>
+<script>
+    //setInterval( callbackfunction, intervaltime)
+
+//     const setinterval= setInterval(() => {
+//     console.log("Bikash Chand")
+// }, 2000); //after each 2sec function will execute
+// clearInterval(setinterval)
+
+
+// example: when a start button is clicked the set interval method will executes and when stop button is clicked the setInterval method should be stopped(ie use clearInterval() method)
+//when start button is clicked
+let timerid;
+const heading=document.querySelector("#heading")
+const showtime=function(){
+    let date= new Date();
+    heading.innerHTML=date.toLocaleTimeString();
+ 
+}
+
+ const startbutton = document.querySelector("#start")
+ startbutton.addEventListener("click",function(){
+     timerid=setInterval(showtime,1000);
+})
+
+ 
+//when stop button is clicked
+
+const stopbutton=document.querySelector("#stop")
+stopbutton.addEventListener("click",function()
+{
+    clearInterval(timerid)
+})
+
+
+
+</script>
+</html>

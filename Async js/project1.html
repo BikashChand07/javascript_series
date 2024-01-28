@@ -1,0 +1,51 @@
+
+<!-- Project: Create two buttons lets say start and stop when start button is clicked the background color of body should change continuosly in every one second and when the stop button is clicked then the changing of background color should stop -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Background color of body will change continously in every one  second when start button is clicked and it stops changing when stop button is clicked</h1>
+    <button id="start">start </button>
+    <button id="stop">stop</button>
+</body>
+<script>
+    //we have to generate color in every second so use random method
+   
+    
+    const generatecolor=function(){
+        const hex="0123456789ABCDEF"// 16 bit and hex color=#A123BC ie 6 digit with hash
+        let color="#"
+        for(let i=0;i<6;i++)
+        {
+        color += hex[Math.floor(Math.random()*16)]
+        }
+        return color;
+    }
+    // now color variable contains the hex code like #12ABC3
+
+    // function to change background color:
+    function changecolor(){
+        document.body.style.backgroundColor=generatecolor();
+    }
+    
+    let interval_id;
+     const startchangecolor = function (){
+        interval_id = setInterval(changecolor, 1000);
+      
+    }
+    const stopchangecolor= function()
+    {
+        clearInterval(interval_id)
+        
+    }
+    const start_button = document.querySelector("#start")
+    start_button.addEventListener("click",startchangecolor)
+
+    const stop_button=document.querySelector("#stop")
+    stop_button.addEventListener("click",stopchangecolor)
+</script>
+</html>

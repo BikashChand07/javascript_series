@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1 id="heading">Asynchronous Js</h1>
+<button id="click">click Me</button>
+<script>
+    //setTimeout(callbackfunc,timeout)
+
+
+    // setTimeout(() => {
+    //     console.log("Bikash Chand")
+    // }, 2000);//execute after 2 sec
+
+    // setInterval(() => {
+    //     console.log("Bikash Chand")
+    // }, 2000);//  continously executes after each 2 seconds 
+
+    //we can also pass the refernece of the callback function to the setTimeout method
+    const saymyname = function(){
+        console.log("Hii,Bikash Chand")
+}
+// setTimeout(saymyname,2000)// here we pass reference of function ie sayname but donot pass the sayname() because by this way the function executes right there
+
+const heading = document.querySelector("#heading")
+const changeheading=function(){
+    heading.innerHTML="This is an example of setTimeout method(Asynchronous js)"
+}
+ const setmethod=setTimeout(changeheading, 2000);
+
+//clearTimeout()
+document.querySelector("#click").addEventListener('click',function(){
+    clearTimeout(setmethod)// now setTimeout() method stopped
+    console.log("stopped setTimeout method")
+})
+  
+</script>
+</body>
+</html>
