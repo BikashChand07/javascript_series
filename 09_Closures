@@ -1,0 +1,45 @@
+ //A closure is the combination of a function and the lexical environment within which that function was declared. This environment consists of any local variables that were in-scope at the time the closure was created.
+
+    function one(){
+        let text="javascript is awesome";
+        
+        function two(){
+            console.log(text);
+        }
+        return two;//dont use two(); because it means the execution of function but we have to return the reference of the function two
+    }
+
+const closure=one();// here one function returns the function two along with its lexical environment. function two can access the variables of function one .so for easy we can say that now closure function contains the function two.
+closure();
+
+//example 2:
+
+// function adder(x)
+// {
+//     function add(y){
+//         console.log(x + y);
+//     }
+//     return add;
+// }
+// const addto2=adder(2);// now add function is returned to the addto2 function along with its lexical environment ie x=2;
+// addto2(5);//7
+// addto2(10);//12
+
+//above example can also be written as
+// function adder(x){
+//     return function add (y) 
+//     {
+//     console.log(x +y);
+// }
+    
+// }
+// const addto2=adder(2);
+// addto2(3);
+
+// again this can be modified as :
+function adder(x)
+{
+    return (y)=>console.log(x + y)
+}
+const addto5=adder(5);
+addto5(20);
