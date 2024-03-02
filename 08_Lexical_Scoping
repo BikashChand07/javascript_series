@@ -1,0 +1,21 @@
+//In programming, lexical refers to the relationship between functions and their surrounding code. Nested functions have access to variables declared in their outer scope.
+//Example:
+function outerfunction()
+{
+    let name="javscript";
+    
+    function innerfunction()
+    {
+        var age=12;
+        console.log("Inner function access the variables declared outside the inner function but in its parent.Hello",name);
+    }
+    function innerfunction1()
+    {
+    //   console.log(age);// it will throw an error because innerfunction1() cannnt access the varibales of its siblings(innerfunction()).but it can access the varibales declared inside the scope of outerfunction ie parent
+      console.log("Inner function1  access the variables declared outside the inner function but in its parent.Hello",name);
+    }
+    innerfunction();
+    innerfunction1();
+}
+outerfunction();
+// here outerfunction creates a local variable called name and function called innerfunction.Note that innerfunction doesnt have any variable and it tries to console the variable name which is outside the innerfunction . howerver the name variable is in the scope of outerfunction ,the innerfunction can access the variable name because it is inside the scope of outerfunction. simply we can say that child can access the things of parents . and siblings cant share the things.in this example the outerfunction is parent and innerfunction is child.
